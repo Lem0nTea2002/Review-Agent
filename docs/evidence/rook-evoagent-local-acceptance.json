@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-08-03",
+  "scope": "local-loopback",
+  "authentication": "jwt",
+  "provider": "local",
+  "provider_calls": 0,
+  "ocr": "fake-1.8.5",
+  "sync_state": "SUCCESS",
+  "async_state": "SUCCESS",
+  "finding_sources": [
+    "local-rules",
+    "open-code-review"
+  ],
+  "workspace_unchanged": true,
+  "audit_recorded": true,
+  "dashboard_readable": true,
+  "task_id": "2518a122-0663-4598-afc3-409f4627fa1c",
+  "limitations": [
+    "OpenCodeReview model review was not invoked.",
+    "No GitHub write operation was performed."
+  ]
+}

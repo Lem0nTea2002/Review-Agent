@@ -1,0 +1,10 @@
+{
+  "name": "evoagent-ocr-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned Alibaba OpenCodeReview runtime for EvoAgent",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@alibaba-group/open-code-review": "1.8.5"
+  }
+}
