@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Review Agent evidence-first pull request review pipeline</title>
+  <desc id="desc">A pull request diff moves through planning, parallel specialists, critique and testing, structured findings, a fix gate, and final verification. The diagram highlights file and line provenance, checkpoints, and controlled defaults.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b1730"/>
+      <stop offset="1" stop-color="#101a35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#44d7ff"/>
+      <stop offset="0.5" stop-color="#8f9cff"/>
+      <stop offset="1" stop-color="#55e6a5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#020817" flood-opacity="0.55"/>
+    </filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#8ca3c7" stroke-opacity="0.055"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#5dd7f6"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="600" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="600" rx="28" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="598" rx="27" fill="none" stroke="#2b4165"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <text x="54" y="67" fill="#f4f8ff" font-size="36" font-weight="750" letter-spacing="0.5">Review Agent</text>
+    <text x="54" y="97" fill="#8fa7c8" font-size="16" letter-spacing="2.2">EVIDENCE-FIRST PR REVIEW</text>
+    <rect x="914" y="45" width="232" height="40" rx="20" fill="#122943" stroke="#55e6a5" stroke-opacity="0.8"/>
+    <circle cx="940" cy="65" r="5" fill="#55e6a5"/>
+    <text x="955" y="71" fill="#c8fce2" font-size="14" font-weight="650" letter-spacing="0.8">CONTROLLED BY DEFAULT</text>
+
+    <path d="M158 246H180 M300 246H322 M542 246H564 M710 246H732 M866 246H888 M1018 246H1040" fill="none" stroke="#5dd7f6" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <g filter="url(#shadow)">
+      <rect x="40" y="178" width="118" height="136" rx="16" fill="#0e2038" stroke="#315176"/>
+      <rect x="180" y="178" width="120" height="136" rx="16" fill="#10233e" stroke="#3a608b"/>
+      <rect x="322" y="154" width="220" height="184" rx="18" fill="#111f3d" stroke="#6e75cb"/>
+      <rect x="564" y="178" width="146" height="136" rx="16" fill="#172039" stroke="#957ee0"/>
+      <rect x="732" y="178" width="134" height="136" rx="16" fill="#12283c" stroke="#3ea9b9"/>
+      <rect x="888" y="178" width="130" height="136" rx="16" fill="#2b2637" stroke="#d09b50"/>
+      <rect x="1040" y="178" width="120" height="136" rx="16" fill="#12302f" stroke="#55c895"/>
+    </g>
+
+    <g fill="#7f98bb" font-size="11" font-weight="700" letter-spacing="1.4">
+      <text x="58" y="202">INPUT</text>
+      <text x="198" y="202">PLAN</text>
+      <text x="340" y="178">PARALLEL REVIEW</text>
+      <text x="582" y="202">CHALLENGE</text>
+      <text x="750" y="202">OUTPUT</text>
+      <text x="906" y="202">REMEDIATE</text>
+      <text x="1058" y="202">DECIDE</text>
+    </g>
+    <g fill="#f4f8ff" font-size="17" font-weight="700">
+      <text x="58" y="235">PR Diff</text>
+      <text x="198" y="235">Planner</text>
+      <text x="582" y="235">Critic</text>
+      <text x="582" y="282">Test</text>
+      <text x="750" y="235">Finding</text>
+      <text x="906" y="235">Fix Gate</text>
+      <text x="1058" y="235">Verifier</text>
+    </g>
+    <g fill="#9fb2ce" font-size="12">
+      <text x="58" y="260">webhook</text>
+      <text x="58" y="279">workspace</text>
+      <text x="58" y="298">range / commit</text>
+      <text x="198" y="260">files</text>
+      <text x="198" y="279">risk domains</text>
+      <text x="198" y="298">assignments</text>
+      <text x="582" y="257">evidence match</text>
+      <text x="582" y="303">reproduction</text>
+      <text x="750" y="260">file : line</text>
+      <text x="750" y="279">source</text>
+      <text x="750" y="298">provenance</text>
+      <text x="906" y="260">safe scope</text>
+      <text x="906" y="279">test plan</text>
+      <text x="1058" y="260">confidence</text>
+      <text x="1058" y="279">risk proof</text>
+    </g>
+
+    <g>
+      <rect x="340" y="194" width="184" height="36" rx="9" fill="#1a2d51" stroke="#5a7eba"/>
+      <rect x="340" y="240" width="184" height="36" rx="9" fill="#1c2b4a" stroke="#7776c9"/>
+      <rect x="340" y="286" width="184" height="36" rx="9" fill="#183044" stroke="#3f9caa"/>
+      <circle cx="358" cy="212" r="4" fill="#44d7ff"/>
+      <circle cx="358" cy="258" r="4" fill="#9f8cff"/>
+      <circle cx="358" cy="304" r="4" fill="#55e6a5"/>
+      <text x="370" y="217" fill="#ddecff" font-size="13">Security specialist</text>
+      <text x="370" y="263" fill="#e7e1ff" font-size="13">Reliability specialist</text>
+      <text x="370" y="309" fill="#d9ffef" font-size="13">Dynamic Skill agent</text>
+    </g>
+
+    <rect x="40" y="377" width="1120" height="2" rx="1" fill="url(#accent)" opacity="0.75"/>
+
+    <g filter="url(#shadow)">
+      <rect x="40" y="410" width="350" height="134" rx="17" fill="#0c1b30" stroke="#2f5077"/>
+      <rect x="425" y="410" width="350" height="134" rx="17" fill="#0c1b30" stroke="#465279"/>
+      <rect x="810" y="410" width="350" height="134" rx="17" fill="#0d2130" stroke="#327b6b"/>
+    </g>
+    <g font-size="12" font-weight="700" letter-spacing="1.4">
+      <text x="62" y="437" fill="#58d9fa">TRACEABLE RESULT</text>
+      <text x="447" y="437" fill="#a697f2">DURABLE HARNESS</text>
+      <text x="832" y="437" fill="#63e4ab">VERIFIED BOUNDARY</text>
+    </g>
+    <g fill="#f1f6ff" font-size="16" font-weight="650">
+      <text x="62" y="469">file + line + evidence</text>
+      <text x="447" y="469">checkpoint + budget + audit</text>
+      <text x="832" y="469">local provider · 0 model calls</text>
+    </g>
+    <g fill="#94a9c6" font-size="13">
+      <text x="62" y="496">rule · severity · fix · test · provenance</text>
+      <text x="447" y="496">resume · retry · ACK · DLQ · rollback</text>
+      <text x="832" y="496">workspace unchanged · no GitHub write</text>
+      <text x="62" y="520">Each claim keeps its path back to changed code.</text>
+      <text x="447" y="520">Every stage leaves replayable state and decisions.</text>
+      <text x="832" y="520">Synthetic metrics keep production gate closed.</text>
+    </g>
+  </g>
+</svg>

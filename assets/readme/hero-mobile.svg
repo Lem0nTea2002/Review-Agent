@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1050" viewBox="0 0 720 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Review Agent mobile evidence-first review pipeline</title>
+  <desc id="desc">A mobile-friendly vertical pipeline moves from pull request diff through review and structured findings to verification, followed by three verified boundary statements.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.58" stop-color="#0b1730"/>
+      <stop offset="1" stop-color="#101a35"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#44d7ff"/>
+      <stop offset="0.55" stop-color="#9f8cff"/>
+      <stop offset="1" stop-color="#55e6a5"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-25%" width="130%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#020817" flood-opacity="0.55"/>
+    </filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#8ca3c7" stroke-opacity="0.055"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#61daf7"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="1050" rx="30" fill="url(#bg)"/>
+  <rect width="720" height="1050" rx="30" fill="url(#grid)"/>
+  <rect x="1" y="1" width="718" height="1048" rx="29" fill="none" stroke="#2b4165"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <text x="54" y="75" fill="#f4f8ff" font-size="48" font-weight="750">Review Agent</text>
+    <text x="54" y="111" fill="#8fa7c8" font-size="19" letter-spacing="2.5">EVIDENCE-FIRST PR REVIEW</text>
+    <text x="54" y="158" fill="#dce8f8" font-size="24" font-weight="600">Turn every diff into a finding you can trace.</text>
+    <rect x="54" y="184" width="318" height="46" rx="23" fill="#102943" stroke="#55e6a5" stroke-opacity="0.85"/>
+    <circle cx="80" cy="207" r="6" fill="#55e6a5"/>
+    <text x="98" y="214" fill="#c8fce2" font-size="17" font-weight="700" letter-spacing="0.8">CONTROLLED BY DEFAULT</text>
+
+    <rect x="54" y="274" width="8" height="426" rx="4" fill="url(#rail)" opacity="0.9"/>
+
+    <g filter="url(#shadow)">
+      <rect x="94" y="260" width="572" height="92" rx="18" fill="#0f2139" stroke="#376089"/>
+      <rect x="94" y="378" width="572" height="116" rx="18" fill="#161f3d" stroke="#8075d1"/>
+      <rect x="94" y="520" width="572" height="116" rx="18" fill="#102b3d" stroke="#43aebc"/>
+      <rect x="94" y="662" width="572" height="92" rx="18" fill="#12312f" stroke="#55ce99"/>
+    </g>
+
+    <path d="M380 352V376 M380 494V518 M380 636V660" fill="none" stroke="#61daf7" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <g font-size="14" font-weight="700" letter-spacing="1.8">
+      <text x="122" y="290" fill="#6eddf7">INPUT</text>
+      <text x="122" y="408" fill="#aa9df4">REVIEW</text>
+      <text x="122" y="550" fill="#62d5df">OUTPUT</text>
+      <text x="122" y="692" fill="#6de9b2">DECISION</text>
+    </g>
+    <g fill="#f4f8ff" font-size="27" font-weight="720">
+      <text x="122" y="326">PR Diff</text>
+      <text x="122" y="446">Plan · Specialists · Critic · Test</text>
+      <text x="122" y="588">Structured Finding</text>
+      <text x="122" y="728">Verify</text>
+    </g>
+    <g fill="#9fb3cf" font-size="18">
+      <text x="506" y="326">webhook / workspace</text>
+      <text x="122" y="474">parallel evidence + reproducibility</text>
+      <text x="122" y="616">file · line · evidence · fix · test</text>
+      <text x="506" y="728">risk proof</text>
+    </g>
+
+    <text x="54" y="817" fill="#8fa7c8" font-size="15" font-weight="700" letter-spacing="2">VERIFIED BOUNDARY</text>
+    <g filter="url(#shadow)">
+      <rect x="54" y="842" width="612" height="54" rx="14" fill="#0d2234" stroke="#347289"/>
+      <rect x="54" y="912" width="612" height="54" rx="14" fill="#151f3a" stroke="#665fa8"/>
+      <rect x="54" y="982" width="612" height="54" rx="14" fill="#102b2d" stroke="#398a70"/>
+    </g>
+    <circle cx="82" cy="869" r="6" fill="#44d7ff"/>
+    <circle cx="82" cy="939" r="6" fill="#9f8cff"/>
+    <circle cx="82" cy="1009" r="6" fill="#55e6a5"/>
+    <g fill="#edf5ff" font-size="22" font-weight="650">
+      <text x="102" y="877">0 provider calls</text>
+      <text x="102" y="947">file + line + source</text>
+      <text x="102" y="1017">production gate closed</text>
+    </g>
+  </g>
+</svg>
