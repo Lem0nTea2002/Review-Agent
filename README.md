@@ -18,7 +18,15 @@ Review Agent 是一个面向 Pull Request 的多 Agent 代码审查与审阅器�
 > [!IMPORTANT]
 > 默认模式使用确定性本地规则审阅器，工作区审阅保持只读，GitHub 评论回写保持关闭。仓库公开指标来自 **100 例 synthetic-controlled Diff**，用于验证评测链路与指标形态；`production_activation_allowed=false`，真实 PR 生产效果仍待独立评测。
 
-[验证证据](#验证证据) · [工作机制](#工作机制) · [快速开始](#快速开始) · [输入与输出](#输入与输出) · [评测门禁](#评测门禁) · [配置与集成](#配置与集成)
+[产品界面](#产品界面) · [验证证据](#验证证据) · [工作机制](#工作机制) · [快速开始](#快速开始) · [输入与输出](#输入与输出) · [评测门禁](#评测门禁) · [配置与集成](#配置与集成)
+
+## 产品界面
+
+<p align="center">
+  <img src="assets/readme/review-workbench.png" width="100%" alt="Review Agent 三栏审查工作台：变更文件、Diff、结构化 Finding 与多 Agent 执行阶段">
+</p>
+
+<p align="center"><sub>真实本地审查结果：变更文件与 Diff 保持只读，Finding 保留位置、证据、风险等级和来源。</sub></p>
 
 ## 它解决什么
 

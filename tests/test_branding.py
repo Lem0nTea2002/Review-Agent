@@ -17,6 +17,15 @@ class BrandingTests(unittest.TestCase):
         self.assertIn("REVIEW AGENT WORKSPACE", index)
         self.assertIn("· Review Agent`", app)
 
+    def test_readme_shows_real_review_workbench(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        screenshot = ROOT / "assets" / "readme" / "review-workbench.png"
+
+        self.assertIn("## 产品界面", readme)
+        self.assertIn("assets/readme/review-workbench.png", readme)
+        self.assertTrue(screenshot.is_file())
+        self.assertGreater(screenshot.stat().st_size, 50_000)
+
     def test_compatibility_identifiers_remain_stable(self) -> None:
         index = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
