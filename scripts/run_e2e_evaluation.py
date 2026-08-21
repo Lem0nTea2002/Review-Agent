@@ -38,7 +38,7 @@ def markdown_report(baseline, candidate, comparison):
     c = candidate["metrics"]
     dataset = candidate["dataset"]
     lines = [
-        "# EvoAgent 端到端 Evaluation Harness 报告",
+        "# Review Agent 端到端 Evaluation Harness 报告",
         "",
         "## 数据集",
         "",

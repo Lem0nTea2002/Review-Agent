@@ -47,7 +47,7 @@ class Settings:
     deepseek_api_key: str = ""
     openrouter_api_key: str = ""
     openrouter_site_url: str = ""
-    openrouter_app_name: str = "EvoAgent"
+    openrouter_app_name: str = "Review Agent"
     eval_max_cases: int = 5
     eval_min_cases: int = 3
     eval_min_improvement: float = 0.01
@@ -200,7 +200,7 @@ class Settings:
             deepseek_api_key=os.getenv("EVOAGENT_DEEPSEEK_API_KEY", ""),
             openrouter_api_key=os.getenv("EVOAGENT_OPENROUTER_API_KEY", ""),
             openrouter_site_url=os.getenv("EVOAGENT_OPENROUTER_SITE_URL", ""),
-            openrouter_app_name=os.getenv("EVOAGENT_OPENROUTER_APP_NAME", "EvoAgent"),
+            openrouter_app_name=os.getenv("EVOAGENT_OPENROUTER_APP_NAME", "Review Agent"),
             eval_max_cases=_int("EVOAGENT_EVAL_MAX_CASES", 5),
             eval_min_cases=_int("EVOAGENT_EVAL_MIN_CASES", 3),
             eval_min_improvement=float(os.getenv("EVOAGENT_EVAL_MIN_IMPROVEMENT", "0.01")),

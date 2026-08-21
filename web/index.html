@@ -4,37 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111b17">
-  <title>EvoAgent · 智能代码审查控制台</title>
-  <meta name="description" content="EvoAgent 多智能体代码审查、自动修复与 Skill 演进控制台">
+  <title>Review Agent · 智能代码审查控制台</title>
+  <meta name="description" content="Review Agent 多智能体代码审查、自动修复与 Skill 演进控制台">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2363e6be'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23080d16'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/assets/app.css">
   <link rel="stylesheet" href="/assets/login.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" aria-label="主导航">
-      <a class="brand" href="#overview" aria-label="EvoAgent 首页">
-        <span class="brand-mark" aria-hidden="true">E</span>
-        <span class="brand-copy">EvoAgent<small>CONTROL PLANE</small></span>
+      <a class="brand" href="#overview" aria-label="Review Agent 首页">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-copy">Review Agent<small>CONTROL PLANE</small></span>
       </a>
 
       <nav class="nav-list">
-        <button class="nav-item active" data-view="overview" data-icon="⌂">
-          <span>运行总览</span>
+        <button class="nav-item active" data-view="overview" data-icon="01">
+          <span>运行</span>
         </button>
-        <button class="nav-item" data-view="review" data-icon="＋">
-          <span>发起审查</span>
+        <button class="nav-item" data-view="review" data-icon="02">
+          <span>审查</span>
         </button>
-        <button class="nav-item" data-view="tasks" data-icon="◫">
-          <span>任务中心</span>
+        <button class="nav-item" data-view="tasks" data-icon="03">
+          <span>任务</span>
         </button>
-        <button class="nav-item" data-view="skills" data-icon="◇">
-          <span>Skills</span>
+        <button class="nav-item" data-view="skills" data-icon="04">
+          <span>能力</span>
         </button>
-        <button class="nav-item" data-view="evolution" data-icon="↗">
-          <span>演进实验室</span>
+        <button class="nav-item" data-view="evolution" data-icon="05">
+          <span>评测</span>
         </button>
-        <button class="nav-item" data-view="github" data-icon="GH">
-          <span>GitHub App</span>
+        <button class="nav-item" data-view="github" data-icon="06">
+          <span>接入</span>
         </button>
       </nav>
 
@@ -47,13 +48,13 @@
     <main>
       <header class="topbar">
         <div>
-          <p class="eyebrow">EVOAGENT WORKSPACE</p>
+          <p class="eyebrow">REVIEW AGENT WORKSPACE</p>
           <h1 id="page-title">运行总览</h1>
         </div>
         <div class="top-actions">
           <button class="icon-button" id="refresh" aria-label="刷新当前数据" title="刷新数据">↻</button>
           <button class="button secondary hidden" id="logout">退出登录</button>
-          <span class="avatar" aria-label="当前用户">EA</span>
+          <span class="avatar" aria-label="当前用户">RA</span>
         </div>
       </header>
 
@@ -71,7 +72,7 @@
           <div class="hero-visual" aria-hidden="true">
             <div class="orbit orbit-one"></div>
             <div class="orbit orbit-two"></div>
-            <div class="core"><span>E</span><small>HARNESS</small></div>
+            <div class="core"><span>R</span><small>HARNESS</small></div>
             <span class="node node-a">SEC</span>
             <span class="node node-b">REL</span>
             <span class="node node-c">LLM</span>
@@ -120,41 +121,99 @@
       </section>
 
       <section class="view" id="view-review" aria-labelledby="page-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">NEW REVIEW</p><h2>提交 Pull Request Diff</h2><p>提供仓库信息与统一格式的 diff，交由多个 Agent 并行审查。</p></div>
-        </div>
-        <div class="form-layout">
-          <article class="panel form-panel">
-            <form id="review-form">
-              <div class="field-row">
-                <label>仓库地址
-                  <input name="repository" placeholder="owner/repository" autocomplete="off" required>
-                </label>
-                <label>PR 编号 <span class="optional">可选</span>
-                  <input name="pull_request" type="number" min="1" placeholder="例如 42">
-                </label>
-              </div>
-              <label>Unified Diff
-                <textarea name="diff" rows="15" spellcheck="false" required placeholder="--- a/app.py&#10;+++ b/app.py&#10;@@ -1 +1 @@&#10;-old_value&#10;+new_value"></textarea>
+        <form id="review-form" class="review-workbench">
+          <header class="workbench-head">
+            <div>
+              <p class="eyebrow">REVIEW WORKBENCH</p>
+              <h2>多 Agent 代码审查</h2>
+            </div>
+            <div class="review-source-fields">
+              <label>仓库
+                <input name="repository" placeholder="owner/repository" autocomplete="off" required>
               </label>
-              <div class="form-footer">
-                <label class="check"><input name="async" type="checkbox" checked><span>放入异步队列</span></label>
-                <button class="button" type="submit">开始多 Agent 审查 <span>→</span></button>
+              <label>PR <span class="optional">可选</span>
+                <input name="pull_request" type="number" min="1" placeholder="#42">
+              </label>
+            </div>
+            <div class="review-submit-group">
+              <label class="check"><input name="async" type="checkbox" checked><span>异步执行</span></label>
+              <button class="button" type="submit">开始审查 <span>→</span></button>
+            </div>
+          </header>
+
+          <div class="workbench-grid">
+            <aside class="workbench-pane file-pane" aria-label="变更文件">
+              <div class="pane-head">
+                <div><p class="eyebrow">CHANGES</p><h3>变更文件</h3></div>
+                <span class="count-badge" id="file-count">0</span>
               </div>
-            </form>
-          </article>
-          <aside class="panel strategy-panel">
-            <p class="eyebrow">REVIEW STRATEGY</p>
-            <h3>执行策略</h3>
-            <ol>
-              <li><b>01</b><span><strong>解析变更</strong><small>只定位新增代码与新文件行号</small></span></li>
-              <li><b>02</b><span><strong>并行判断</strong><small>专职 Agent 独立评估风险</small></span></li>
-              <li><b>03</b><span><strong>质量门禁</strong><small>过滤无定位、无修复方案的结论</small></span></li>
-              <li><b>04</b><span><strong>经验沉淀</strong><small>反馈自动进入失败案例库</small></span></li>
-            </ol>
-            <div id="review-result" class="result empty" aria-live="polite">审查结果将在这里显示</div>
-          </aside>
-        </div>
+              <div class="source-actions">
+                <button class="chip active" type="button" data-editor-mode="edit">粘贴 Diff</button>
+                <button class="chip" type="button" id="upload-diff">上传 .diff</button>
+                <input id="diff-file" type="file" accept=".diff,.patch,text/plain" hidden>
+              </div>
+              <div id="review-files" class="review-files">
+                <div class="pane-empty">粘贴或上传 Diff 后，这里会列出变更文件。</div>
+              </div>
+              <div class="change-summary">
+                <span><i class="added-dot"></i><b id="added-count">0</b> 新增</span>
+                <span><i class="removed-dot"></i><b id="removed-count">0</b> 删除</span>
+              </div>
+            </aside>
+
+            <section class="workbench-pane diff-pane" aria-label="Diff 编辑器">
+              <div class="pane-head diff-toolbar">
+                <div class="editor-tabs">
+                  <button class="editor-tab active" type="button" data-editor-mode="edit">Diff 编辑</button>
+                  <button class="editor-tab" type="button" data-editor-mode="preview">变更预览</button>
+                </div>
+                <span id="diff-stats">0 行 · 0 B</span>
+              </div>
+              <textarea id="diff-input" name="diff" spellcheck="false" required aria-label="Unified Diff" placeholder="--- a/app.py&#10;+++ b/app.py&#10;@@ -1 +1 @@&#10;-old_value&#10;+new_value"></textarea>
+              <div id="diff-preview" class="diff-preview hidden" aria-label="格式化 Diff 预览"></div>
+              <div class="diff-foot">
+                <span id="diff-validation" class="validation neutral"><i></i>等待输入 Unified Diff</span>
+                <span>仅审查新增行 · 工作区只读</span>
+              </div>
+            </section>
+
+            <aside class="workbench-pane inspector-pane" aria-label="审查结果">
+              <div class="inspector-tabs" role="tablist" aria-label="结果视图">
+                <button class="inspector-tab active" type="button" data-review-tab="findings">Finding</button>
+                <button class="inspector-tab" type="button" data-review-tab="trace">Agent 轨迹</button>
+                <button class="inspector-tab" type="button" data-review-tab="audit">审计</button>
+              </div>
+              <div class="inspector-summary" id="review-task-meta">
+                <span class="risk-orb neutral">—</span>
+                <span><b>等待审查</b><small>提交 Diff 后显示风险与执行状态</small></span>
+              </div>
+              <div id="review-findings" class="inspector-content active" data-review-panel="findings">
+                <div id="review-result" class="result empty" aria-live="polite">尚无审查结果</div>
+              </div>
+              <div id="review-trace" class="inspector-content" data-review-panel="trace">
+                <div class="pane-empty">Agent 开始执行后显示状态轨迹。</div>
+              </div>
+              <div id="review-audit" class="inspector-content" data-review-panel="audit">
+                <div class="pane-empty">Agent 之间的交接记录会显示在这里。</div>
+              </div>
+            </aside>
+          </div>
+
+          <footer class="pipeline-bar">
+            <div class="pipeline-steps" id="review-pipeline" aria-label="Agent 执行阶段">
+              <span data-stage="PLANNING"><i>1</i>Planner</span>
+              <b></b><span data-stage="EXECUTING"><i>2</i>Specialist</span>
+              <b></b><span data-stage="EXECUTING"><i>3</i>Critic</span>
+              <b></b><span data-stage="EXECUTING"><i>4</i>Test</span>
+              <b></b><span data-stage="REVIEWING"><i>5</i>Verifier</span>
+            </div>
+            <div class="pipeline-actions">
+              <span id="review-runtime">空闲</span>
+              <button class="text-button hidden" id="resume-review" type="button">重新执行</button>
+              <button class="text-button danger-text hidden" id="cancel-review" type="button">取消任务</button>
+            </div>
+          </footer>
+        </form>
       </section>
 
       <section class="view" id="view-tasks" aria-labelledby="page-title">
@@ -173,7 +232,7 @@
               <div><p class="eyebrow">TASK REPORT</p><h3>任务报告</h3></div>
               <button class="button danger hidden" id="create-fix">创建修复分支</button>
             </div>
-            <pre id="task-report">请选择一个已完成的任务。</pre>
+            <div id="task-report" class="task-report"><div class="pane-empty">请选择一个任务查看结构化报告。</div></div>
           </article>
         </div>
       </section>
@@ -218,7 +277,7 @@
           <div class="github-icon" aria-hidden="true"><span>GH</span></div>
           <div class="github-copy">
             <p class="eyebrow">REPOSITORY INTEGRATION</p>
-            <h2>把 EvoAgent 接入开发流程</h2>
+            <h2>把 Review Agent 接入开发流程</h2>
             <p>安装后，PR 创建或更新会自动进入异步审查队列；自动修复始终写入独立的 <code>evoagent/fix-*</code> 分支。</p>
             <a class="button accent" href="/github/install">安装 GitHub App <span>→</span></a>
           </div>
@@ -239,8 +298,8 @@
   <div class="login-overlay hidden" id="login-overlay">
     <form class="login-card" id="login-form">
       <div class="login-brand">
-        <span class="brand-mark">E</span>
-        <span>EvoAgent<small>SECURE CONTROL PLANE</small></span>
+        <span class="brand-mark">R</span>
+        <span>Review Agent<small>SECURE CONTROL PLANE</small></span>
       </div>
       <p class="eyebrow">WELCOME BACK</p>
       <h2>登录控制台</h2>

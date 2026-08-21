@@ -2,7 +2,7 @@ from typing import Any, Dict
 
 
 def to_markdown(report: Dict[str, Any]) -> str:
-    title = "# EvoAgent PR Review"
+    title = "# Review Agent PR Review"
     if report.get("pull_request") is not None:
         title += " — #%s" % report["pull_request"]
     lines = [

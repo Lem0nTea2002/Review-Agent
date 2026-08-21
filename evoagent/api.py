@@ -460,7 +460,7 @@ def run() -> None:
     service = ReviewService(settings)
     handler = type("ConfiguredApiHandler", (ApiHandler,), {"service": service, "settings": settings})
     server = ThreadingHTTPServer((settings.host, settings.port), handler)
-    print("EvoAgent dashboard: http://%s:%d" % (settings.host, settings.port))
+    print("Review Agent dashboard: http://%s:%d" % (settings.host, settings.port))
     print("Persistence: %s | Queue: %s | Orchestrator: %s" % (
         "postgresql" if settings.database_url else "sqlite", service.queue.backend, service.reviewer.name
     ))

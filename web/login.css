@@ -6,17 +6,17 @@
   place-items: center;
   padding: 16px;
   background:
-    radial-gradient(circle at 25% 20%, rgba(201,247,111,.13), transparent 25rem),
-    rgba(8, 18, 14, .88);
+    radial-gradient(circle at 25% 20%, rgba(76,201,240,.12), transparent 25rem),
+    rgba(5, 9, 15, .92);
   backdrop-filter: blur(12px);
 }
 
 .login-card {
   width: min(430px, calc(100vw - 32px));
   padding: 34px;
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 20px;
-  background: rgba(255,255,255,.98);
+  border: 1px solid #29394e;
+  border-radius: 14px;
+  background: rgba(15, 23, 36, .98);
   box-shadow: 0 28px 90px rgba(0,0,0,.3);
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   gap: 11px;
   margin-bottom: 32px;
-  color: var(--ink);
+  color: #e5edf4;
   font-size: 16px;
   font-weight: 800;
 }
